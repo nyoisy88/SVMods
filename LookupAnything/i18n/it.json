@@ -2,6 +2,10 @@
     /*********
     ** Generic translations
     *********/
+    // language info
+    "generic.list-separator": ", ", // text between listed values (like ", " in "A, B, C")
+    "generic.line-wrap-on": "", // characters after which we can line-wrap text if needed, even if there's no space
+
     // date names
     "generic.now": "ora",
     "generic.tomorrow": "domani",
@@ -27,6 +31,7 @@
     "generic.price": "{{price}}g",
     "generic.price-for-quality": "{{price}}g ({{quality}})",
     "generic.price-for-stack": "{{price}}g ogni {{count}}",
+    "generic.show-x-results": "mostra {{count}} risultati",
 
     // types
     "type.building": "Edificio",
@@ -45,6 +50,9 @@
     "quality.gold": "oro",
     "quality.iridium": "iridio",
 
+    // item names shown in recipes
+    "item.wild-seeds": "Semi selvatici (Qualsiasi)",
+
     // NPC friendship
     "friendship-status.friendly": "Amichevole",
     "friendship-status.dating": "Frequentazione",
@@ -52,6 +60,11 @@
     "friendship-status.married": "Sposati",
     "friendship-status.divorced": "Divorziati",
     "friendship-status.kicked-out": "Cacciato via",
+
+    // custom content (shows which mod added an item, NPC, etc)
+    // TODO
+    "added-by-mod": "Added by mod",
+    "added-by-mod.summary": "{{modName}}",
 
     /*********
     ** Data translations
@@ -96,30 +109,23 @@
     "data.item.box.description": "Rompila per ottenere diversi materiali.",
 
     // location names
-    "location.backwoods": "campagna",
-    "location.beach": "spiaggia",
     "location.beach.east-pier": "spiaggia (molo orientale)",
     "location.bugLand": "tana dell'insetto mutante",
-    "location.busStop": "fermata dell'autobus",
-    "location.desert": "deserto",
-    "location.farm": "fattoria",
+    "location.desert.topPond": "deserto (stagno a nord)",
     "location.farmCave": "grotta nella fattoria",
     "location.farmHouse": "casale",
-    "location.forest": "foresta",
-    "location.forest.fish-area-0": "fiume nella foresta",
-    "location.forest.fish-area-1": "laghetto nella foresta",
     "location.forest.island-tip": "fiume nella foresta (punta Sud dell'isola maggiore)",
-    "location.mountain": "montagna",
-    "location.railroad": "ferrovia",
-    "location.sewer": "fogne",
+    "location.forest.lake": "laghetto nella foresta",
+    "location.forest.river": "fiume nella foresta",
+    "location.HarveyRoom": "Harvey's Room", // TODO
+    "location.LeoTreeHouse": "Treehouse", // TODO
+    "location.SandyHouse": "Oasis", // TODO
+    "location.SebastianRoom": "Sebastian's Room", // TODO
     "location.submarine": "sottomarino",
-    "location.town": "paese",
     "location.town.northmost-bridge": "paese (ponte Nord)",
-    "location.tunnel": "tunnel dell'autobus",
     "location.undergroundMine": "miniera",
     "location.undergroundMine.level": "miniera livello {{level}}",
     "location.witchSwamp": "palude della strega",
-    "location.woods": "boschi segreti",
 
     "location.caldera": "Caldera dell'Isola Zenzero",
     "location.islandEast": "Zona est dell'Isola Zenzero",
@@ -128,10 +134,40 @@
     "location.islandSouthEast": "Zona sud-est dell'Isola Zenzero",
     "location.islandSouthEastCave": "Caverne a sud-est dell'Isola Zenzero",
     "location.islandWest": "Zona ovest dell'Isola Zenzero",
-    "location.islandWest.fish-area-1": "Zona ovest dell'Isola Zenzero (oceano)",
-    "location.islandWest.fish-area-2": "Zona ovest dell'Isola Zenzero (stagno)",
+    "location.islandWest.freshwater": "Zona ovest dell'Isola Zenzero (stagno)",
+    "location.islandWest.ocean": "Zona ovest dell'Isola Zenzero (oceano)",
 
+    "location.fish-area": "{{locationName}} ({{areaName}})",
     "location.unknown-fish-area": "{{locationName}} (area di pesca {{id}})",
+
+
+    /*********
+    ** Conditions & context tags
+    *********/
+    "condition-or-context-tag.negate": "non {{value}}",
+
+    "condition.day-of-month": "in giorni specifici ({{days}})",
+    "condition.day-of-month.even": "giorni pari",
+    "condition.day-of-month.odd": "giorni dispari",
+
+    "condition.item-type.input": "oggetto inserito",
+    "condition.item-type.target": "oggetto finale",
+
+    "condition.raw-context-tag": "tag contesto \"{{tag}}\"",
+    "condition.raw-condition": "query \"{{tag}}\"",
+
+    "condition.item-context-tag": "{{item}} ha il tag contesto {{tags}}",
+    "condition.item-context-tags": "{{item}} ha i tag contesto {{tags}}",
+    "condition.item-context-tag.value": "'{{tag}}'", // the format of each context tag in the list (each context tag isn't translated)
+
+    "condition.item-edibility.edible": "{{item}} è commestibile",
+    "condition.item-edibility.min": "{{item}} è commestibile per {{min}} o più",
+    "condition.item-edibility.range": "{{item}} è commestibile per {{min}} fino ad un massimo di {{max}}",
+
+    "context-tag.bone": "qualsiasi osso",
+    "context-tag.egg": "qualsiasi uovo",
+    "context-tag.large-egg": "qualsiasi uovo grande",
+    "context-tag.preserved-item": "{{name}} conservato",
 
 
     /*********
@@ -161,6 +197,7 @@
     // labels
     "building.animals": "Animali",
     "building.construction": "Costruzione",
+    "building.construction-costs": "Costi di costruzione",
     "building.feed-trough": "Trogolo per il cibo",
     "building.horse": "Cavallo",
     "building.horse-location": "Posizione cavallo",
@@ -281,7 +318,6 @@
     ** Item > generic lookups
     *********/
     // labels
-    "item.custom-item": "Custom item", // TODO
     "item.contents": "Contenuti",
     "item.loves-this": "Lo adora",
     "item.likes-this": "Piace a",
@@ -300,22 +336,26 @@
     "item.produces-dye": "Produce tinta",
 
     // values
-    "item.custom-item.summary": "added by {{modName}}", // TODO
     "item.contents.placed": "{{name}} piazzato",
     "item.contents.ready": "{{name}} pronto",
     "item.contents.partial": "{{name}} fra {{time}}",
     "item.undiscovered-gift-taste": "{{count}} abitanti non rivelati",
     "item.undiscovered-gift-taste-appended": ", e {{count}} abitanti non rivelati",
     "item.needed-for.community-center": "centro sociale ({{bundles}})",
-    "item.needed-for.full-shipment": "l'achievement 'spedizione completa' (consegnane uno)",
-    "item.needed-for.polyculture": "l'achievement 'policoltura' (consegnane ancora {{count}})",
+    "item.needed-for.full-shipment": "l'achievement 'spedizione completa' (spediscine uno)",
+    "item.needed-for.monoculture": "l'achievement 'monocoltura' (spediscine ancora {{count}})",
+    "item.needed-for.polyculture": "l'achievement 'policoltura' (spediscine ancora {{count}})",
     "item.needed-for.full-collection": "l'achievement 'collezione completa' (donane ancora uno al museo)",
-    "item.needed-for.gourmet-chef": "l'achievement 'chef da gourmet' (cucina {{recipes}})",
+    "item.needed-for.gourmet-chef": "l'achievement 'chef stellato' (cucina {{recipes}})",
     "item.needed-for.craft-master": "l'achievement 'maestro della fabbricazione' (crea {{recipes}})",
     "item.needed-for.quests": "missioni attuali ({{quests}})",
+    "item.unknown-recipes": "{{count}} ricette sconosciute",
     "item.sells-to.shipping-box": "Cassetta delle spedizioni",
     "item.recipes-for-ingredient.entry": "{{name}} ({{count}} necessari)",
     "item.recipes-for-machine.multiple-items": "{{name}} x{{count}}",
+    "item.recipes-for-machine.same-as-input": "[stesso oggetto]", // e.g. crystalarium produces same item that was put in
+    "item.recipes-for-machine.conditions": "[condizioni: {{conditions}}]",
+    "item.recipes-for-machine.too-complex": "Alcune regole della macchina sono troppo dinamiche per essere visualizzate.",
     "item.number-owned.summary": "Quantità posseduta: {{count}}",
     "item.number-crafted.summary": "Quantità fabbricata: {{count}}",
 
@@ -363,7 +403,8 @@
 
     // values
     "item.fish-spawn-rules.min-fishing-level": "livello minimo di pesca: {{level}}",
-    "item.fish-spawn-rules.not-caught-yet": "Non ancora pescato (si può pescare solo una volta)",
+    "item.fish-spawn-rules.not-caught-yet": "non ancora pescato (si può pescare solo una volta)",
+    "item.fish-spawn-rules.extended-family-quest-active": "la missione \"Famiglia Estesa\" è attiva",
     "item.fish-spawn-rules.locations": "luogo: {{locations}}",
     "item.fish-spawn-rules.locations-by-season.label": "luoghi:",
     "item.fish-spawn-rules.locations-by-season.season-locations": "{{season}}: {{locations}}",
@@ -456,6 +497,7 @@
     "npc.neutral-gifts": "Regali neutrali",
     "npc.dislikes-gifts": "Regali che non piacciono",
     "npc.hates-gifts": "Regali che odia",
+    "npc.schedule": "Today's schedule", // TODO
 
     // values
     "npc.can-romance.married": "Siete sposati! <", // < turns into a heart
@@ -465,6 +507,9 @@
     "npc.friendship.need-points": "prossimo fra {{count}} pti",
     "npc.undiscovered-gift-taste": "{{count}} oggetti non rivelati",
     "npc.unowned-gift-taste": "{{count}} oggetti non posseduti",
+    "npc.schedule.current-position": "Currently at {{locationName}} ({{x}}, {{y}}).", // TODO
+    "npc.schedule.no-entries": "No schedule loaded.", // TODO
+    "npc.schedule.entry": "{{time}}: walk to {{locationName}} ({{x}}, {{y}}).", // TODO
 
 
     /*********
@@ -535,7 +580,7 @@
 
     // values
     "puzzle.solution.solved": "Puzzle risolto!",
-    "puzzle.solution.hidden": "Le soluzioni dei Puzzle sono nascoste nella modalità Progresso.",
+    "puzzle.solution.hidden": "Le soluzioni dei Puzzle sono nascoste in base alle tue impostazioni.",
 
 
     /*********
@@ -615,7 +660,9 @@
     "tree.name.oak": "Quercia",
     "tree.name.palm": "Palma",
     "tree.name.pine": "Pino",
-    "tree.name.unknown": "Albero Sconosciuto",
+    "tree.name.mossy": "Albero muschiato",
+    "tree.name.mystic": "Albero mistico",
+    "tree.name.unknown": "Albero sconosciuto",
     "tree.stage.done": "Completamente cresciuto",
     "tree.stage.partial": "{{stageName}} ({{step}} di {{max}})",
     "tree.next-growth.winter": "non può crescere fuori da una serra in inverno se non fertilizzata",
@@ -639,10 +686,20 @@
     *********/
     // main options
     "config.title.main-options": "Opzioni principali",
-    "config.progression-mode.name": "Modalità progressione",
-    "config.progression-mode.desc": "Scegli se nascondere alcuni contenuti (ad esempio, i gusti dei regali e le soluzioni degli enigmi) finché non li si scopre nel gioco.",
     "config.force-full-screen.name": "Forza schermo intero",
     "config.force-full-screen.desc": "Scegli se il menu deve essere sempre a tutto schermo, invece che centrato nella finestra. Questa opzione è utile soprattutto quando si visualizzano i campi di data mining.",
+
+    // progression mode
+    "config.title.progression": "Modalità progressione",
+
+    "config.progression.show-unknown-gift-tastes.name": "Mostra gusti dei regali sconosciuti",
+    "config.progression.show-unknown-gift-tastes.desc": "Scegli se mostrare i gusti dei regali che non si sono ancora appresi nel gioco (ad esempio dal testo del dialogo o sperimentando).",
+
+    "config.progression.show-unknown-recipes.name": "Mostra ricette sconosciute",
+    "config.progression.show-unknown-recipes.desc": "Scegli se mostrare le ricette che non si sono ancora imparate nel gioco.",
+
+    "config.progression.show-puzzle-solutions.name": "Mostra soluzioni dei puzzle",
+    "config.progression.show-puzzle-solutions.desc": "Scegli se mostrare le soluzioni dei puzzle.",
 
     // gift tastes
     "config.title.gift-tastes": "Gusti dei regali",
@@ -663,12 +720,25 @@
     "config.highlight-unrevealed-gift-tastes.name": "Evidenzia i gusti dei regali non rivelati",
     "config.highlight-unrevealed-gift-tastes.desc": "Scegli se evidenziare i gusti dei regali degli oggetti che non sono stati rivelati nel profilo del PNG. Se abilitato, i gusti dei regali non rivelati saranno in grassetto.",
 
+    // collapse fields
+    "config.title.collapse-fields": "Riduzione dei campi grandi",
+
+    "config.collapse-fields.enabled.name": "Abilitato",
+    "config.collapse-fields.enabled.desc": "Scegli se ridurre i campi grandi, in modo che il menu di ricerca sostituisca l'elenco con un link cliccabile 'mostra i valori X' per espanderlo.",
+
+    "config.collapse-fields.building-recipes.name": "Ricerca edificio: ricette",
+    "config.collapse-fields.item-recipes.name": "Ricerca oggetti: ricette",
+    "config.collapse-fields.npc-gift-tastes.name": "Ricerca PNG: gusti dei regali",
+    "config.collapse-fields.any.desc": "Se il campo contiene così tanti valori, il menu di ricerca sostituirà l'elenco con un link 'mostra X valori' cliccabile per espanderlo.",
+
     // advanced options
     "config.title.advanced-options": "Opzioni avanzate",
     "config.tile-lookups.name": "Ricerca piastrelle",
     "config.tile-lookups.desc": "Se includere o meno le piastrelle della mappa come target di ricerca.",
     "config.data-mining-fields.name": "Mostra i campi di data mining",
     "config.data-mining-fields.desc": "Scegli se mostrare i dati grezzi utili per i data miner (come campi separati in fondo ai risultati delle ricerche). Si tratta di una funzione avanzata non destinata alla maggior parte dei giocatori.",
+    "config.show-invalid-recipes.name": "Mostra ricette non valide",
+    "config.show-invalid-recipes.desc": "Scegli se mostrare o meno le ricette che richiedono o producono articoli rotti.",
     "config.target-redirection.name": "Reindirizzamento del target",
     "config.target-redirection.desc": "In alcuni casi il gioco genera un'entità temporanea per rappresentarne un'altra. Ad esempio, Abigail nelle miniere è in realtà un PNG temporaneo con il nome di 'AbigailMine', quindi cercarla lì non mostrerà le informazioni reali di Abigail. Con questa opzione attivata, Lookup Anything cercherà invece l'Abigail originale.",
     "config.scroll-amount.name": "Quantità di scorrimento",

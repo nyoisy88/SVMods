@@ -1,0 +1,11 @@
+{
+    "Name": "Transmutation Time",
+    "Author": "AngelOfStars",
+    "Version": "1.2.0",
+    "Description": "Adds recipes to transmute more bars, and to detransmute bars.",
+    "UniqueID": "AngelOfStars.TransmutationTA",
+    "UpdateKeys": [ "Nexus:13672@All" ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

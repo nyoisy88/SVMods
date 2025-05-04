@@ -1,0 +1,20 @@
+{
+  "config.modEnabled": "Modu Etkinleştir",
+  "config.toggleButton": "Tuş Ata",
+  "config.onlyWhenHolding": "Sadece Alet Tutarken Değiştir",
+  "config.switchFromWeapon": "Elinde Silah Varken Değiştir",
+  "config.switchForAnimals": "Hayvanlar İçin Değiştir",
+  "config.switchForMonsters": "Yaratıklar İçin Değiştir",
+  "config.maxMonsterDistance": "Maksimum Yaratık Mesafesi",
+  "config.switchForTrees": "Ağaçlar İçin Değiştir",
+  "config.switchForGrass": "Çimen İçin Değiştir",
+  "config.switchForCrops": "Ekinler İçin Değiştir",
+  "config.harvestWithScythe": "Tırpan ile Hasat Et (Mod)",
+  "config.switchForResourceClumps": "Değerli Taşlar İçin Değiştir",
+  "config.switchForPan": "Tepsi İçin Değiştir",
+  "config.switchForWateringCan": "Sulama Kabı İçin Değiştir",
+  "config.switchForTilling": "Toprağı Sürmek İçin Değiştir",
+  "config.switchForWatering": "Sulamak İçin Değiştir",
+  "config.switchForFishing": "Balık Tutmak İçin Değiştir",
+  "config.switchForObjects": "Objeler İçin Değiştir"
+}

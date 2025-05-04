@@ -1,0 +1,95 @@
+{
+  "Format": "1.27.2",
+  "ConfigSchema": {
+		"Item1type": { "Default": "335", "Description": "What to detransmute into Copper Bars. Default: Iron Bar"},
+		"Item1Amount": { "Default": "1"  },
+		"Item2type": { "Default": "334", "Description": "What results from Item 1. Default: Copper Bar"},
+		"Item2Amount": { "Default": "3"  },
+		"Item3type": { "Default": "336", "Description": "What to detransmute into Iron Bars. Default: Gold Bar"},
+		"Item3Amount": { "Default": "1"  },
+		"Item4type": { "Default": "335", "Description": "What results from Item 3. Default: Iron Bar"},
+		"Item4Amount": { "Default": "2"  },
+		"Item5type": { "Default": "337", "Description": "What to detransmute into Gold Bars: Iridium Bar"},
+		"Item5Amount": { "Default": "1"  },
+	    "Item6type": { "Default": "336", "Description": "What results from Item 5. Default: Gold Bar"},
+		"Item6Amount": { "Default": "10"  },
+	    "Item7type": { "Default": "910", "Description": "What to detransmute into Iridium Bars. Default: Radioactive Bar"},
+		"Item7Amount": { "Default": "1"  },
+	    "Item8type": { "Default": "337", "Description": "What results from Item 7. Default: Iridium Bar"},
+		"Item8Amount": { "Default": "15"  },
+		"Item9type": { "Default": "336", "Description": "What to transmute into Iridium Bars. Default: Gold Bar"},
+		"Item9Amount": { "Default": "10"  },
+	    "Item10type": { "Default": "337", "Description": "What results from Item 9. Default: Iridium Bar"},
+		"Item10Amount": { "Default": "1"  },
+		"Item11type": { "Default": "337", "Description": "What to transmute into Radioactive Bars. Default: Iridium Bar"},
+		"Item11Amount": { "Default": "15"  },
+	    "Item12type": { "Default": "910", "Description": "What results from Item 11. Default: Radioactive Bar"},
+		"Item12Amount": { "Default": "1"  },
+		"Item13type": { "Default": "334", "Description": "What to transmute into Iron Bars. Default: Copper Bar"},
+		"Item13Amount": { "Default": "3"  },
+		"Item14type": { "Default": "335", "Description": "What results from Item 13. Default: Iron Bar"},
+		"Item14Amount": { "Default": "1"  },
+		"Item15type": { "Default": "335", "Description": "What to transmute into Gold Bars. Default: Iron Bar"},
+		"Item15Amount": { "Default": "2"  },
+		"Item16type": { "Default": "336", "Description": "What results from Item 15. Default: Gold Bar"},
+		"Item16Amount": { "Default": "1"  },
+	},
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Copper Bar": "{{Item1type}} {{Item1Amount}}/Home/{{Item2type}} {{Item2Amount}}/false/Mining 4",
+      }
+     },
+	{
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Iron Bar": "{{Item3type}} {{Item3Amount}}/Home/{{Item4type}} {{Item4Amount}}/false/Mining 7",
+      }
+     },
+	{
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Gold Bar": "{{Item5type}} {{Item5Amount}}/Home/{{Item6type}} {{Item6Amount}}/false/Mining 9",
+      }
+     },
+	{
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Transmute (Ir)": "{{Item7type}} {{Item7Amount}}/Home/{{Item8type}} {{Item8Amount}}/false/Mining 9",
+      }
+     },
+	 {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Iridium Bar": "{{Item9type}} {{Item9Amount}}/Home/{{Item10type}} {{Item10Amount}}/false/Mining 9",
+      }
+     },
+	 {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Transmute {Ra)": "{{Item11type}} {{Item11Amount}}/Home/{{Item12type}} {{Item12Amount}}/false/Mining 9",
+      }
+     },
+	 {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Transmute (Fe)": "{{Item13type}} {{Item13Amount}}/Home/{{Item14type}} {{Item14Amount}}/false/Mining 4",
+      }
+     },
+	 	 {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "Transmute (Au)": "{{Item15type}} {{Item15Amount}}/Home/{{Item16type}} {{Item16Amount}}/false/Mining 9",
+      }
+     },
+	]
+   }

@@ -108,37 +108,8 @@ You shouldn't change this file unless you know what you're doing.
         ],
 
         /* achievements */
-        "PolycultureCrops": [
-            "(O)24",
-            "(O)188",
-            "(O)190",
-            "(O)192",
-            "(O)248",
-            "(O)250",
-            "(O)252",
-            "(O)254",
-            "(O)256",
-            "(O)258",
-            "(O)260",
-            "(O)262",
-            "(O)264",
-            "(O)266",
-            "(O)268",
-            "(O)270",
-            "(O)272",
-            "(O)274",
-            "(O)276",
-            "(O)278",
-            "(O)280",
-            "(O)282",
-            "(O)284",
-            "(O)300",
-            "(O)304",
-            "(O)398",
-            "(O)400",
-            "(O)433"
-        ],
-        "PolycultureCount": 15
+        "PolycultureCount": 15,
+        "MonocultureCount": 300
     },
 
     /*********
@@ -175,808 +146,6 @@ You shouldn't change this file unless you know what you're doing.
         }
     ],
 
-    /*********
-    ** Building recipes (not available from game data)
-    *********/
-    "BuildingRecipes": [
-        /* mill */
-        {
-            "BuildingKey": "Mill",
-            "Ingredients": {
-                "262": 1 // wheat
-            },
-            "Output": "246" // wheat flour
-        },
-        {
-            "BuildingKey": "Mill",
-            "Ingredients": {
-                "284": 1 // beet
-            },
-            "Output": "245", // sugar
-            "MaxOutput": 3
-        },
-        {
-            "BuildingKey": "Mill",
-            "Ingredients": {
-                "271": 1 // unmilled rice
-            },
-            "Output": "423" // rice
-        }
-    ],
-
-    /*********
-    ** Machine recipes (not available from game data)
-    *********/
-    "MachineRecipes": [
-        /* bone mill */
-        {
-            "MachineID": "90",
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [
-                                "579", // Prehistoric Scapula
-                                "580", // Prehistoric Tibia
-                                "581", // Prehistoric Skull
-                                "582", // Skeletal Hand
-                                "583", // Prehistoric Rib
-                                "584", // Prehistoric Vertebra
-                                "585", // Skeletal Tail
-                                "586", // Nautilus Fossil
-                                "587", // Amphibian Fossil
-                                "588", // Palm Fossil
-                                "589", // Trilobyte
-                                "820", // Fossilized Skull
-                                "821", // Fossilized Spine
-                                "822", // Fossilized Tail
-                                "823", // Fossilized Leg
-                                "824", // Fossilized Ribs
-                                "825", // Snake Skull
-                                "826", // Snake Vertebrae
-                                "827", // Mummified Bat
-                                "828" // Mummified Frog
-                            ]
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "466" ], // Deluxe Speed-Gro
-                            "MinOutput": 3,
-                            "MaxOutput": 6,
-                            "OutputChance": 22.5
-                        },
-                        {
-                            "Ids": [ "465" ], // Speed-Gro
-                            "MinOutput": 5,
-                            "MaxOutput": 10,
-                            "OutputChance": 22.5
-                        },
-                        {
-                            "Ids": [ "369" ], // Quality Fertilizer
-                            "MinOutput": 10,
-                            "MaxOutput": 20,
-                            "OutputChance": 22.5
-                        },
-                        {
-                            "Ids": [ "805" ], // Tree Fertilizer
-                            "MinOutput": 5,
-                            "MaxOutput": 10,
-                            "OutputChance": 22.5
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "881" ], // bone fragment
-                            "Count": 5
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "466" ], // Deluxe Speed-Gro
-                            "MinOutput": 3,
-                            "MaxOutput": 6,
-                            "OutputChance": 22.5
-                        },
-                        {
-                            "Ids": [ "465" ], // Speed-Gro
-                            "MinOutput": 5,
-                            "MaxOutput": 10,
-                            "OutputChance": 22.5
-                        },
-                        {
-                            "Ids": [ "369" ], // Quality Fertilizer
-                            "MinOutput": 10,
-                            "MaxOutput": 20,
-                            "OutputChance": 22.5
-                        },
-                        {
-                            "Ids": [ "805" ], // Tree Fertilizer
-                            "MinOutput": 5,
-                            "MaxOutput": 10,
-                            "OutputChance": 22.5
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* charcoal kiln */
-        {
-            "MachineID": "114",
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "388" ], // wood
-                            "Count": 10
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "382" ] // coal
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* cheese press */
-        {
-            "MachineID": 16,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "184", "186" ] // milk, large milk
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "424" ] // cheese
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "436", "438" ] // goat milk, large goat milk
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "426" ] // goat cheese
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* furnace */
-        {
-            "MachineID": 13,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "378" ], // copper ore
-                            "Count": 5
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "334" ] // copper bar
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "380" ], // iron ore
-                            "Count": 5
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "335" ] // iron bar
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "384" ], // gold ore
-                            "Count": 5
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "336" ] // gold bar
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "386" ], // gold ore
-                            "Count": 5
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "337" ] // iridium bar
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "909" ], // radioactive ore
-                            "Count": 5
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "910" ] // radioactive bar
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "82" ] // fire quartz
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "338" ], // refined quartz
-                            "MaxOutput": 3
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "80" ] // quartz
-                        },
-                        {
-                            "PossibleIds": [ "382" ] // coal
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "338" ] // refined quartz
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "458" ] // bouquet
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "277" ] // wilted bouquet
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* keg */
-        {
-            "MachineID": 12,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "262" ] // wheat
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "346" ] // beer
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "433" ], // coffee bean
-                            "Count": 5
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "395" ] // coffee
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "815" ] // tea leaves
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "614" ] // green tea
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "340" ] // honey
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "459" ] // mead
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "304" ] // hops
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "303" ] // pale ale
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ -79 ] // any fruit
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "348" ] // wine
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ -75 ] // any vegetable
-                        }
-                    ],
-                    "ExceptIngredients": [
-                        {
-                            "PossibleIds": [ "262", "304", "815" ] // wheat, hops, tea leaves
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "350" ] // juice
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* loom */
-        {
-            "MachineID": 17,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "440" ] // wool
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "428" ] // cloth
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* mayonnaise machine */
-        {
-            "MachineID": 24,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "174", "176", "180", "182" ] // large white egg, white egg, brown egg, large brown egg
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "306" ] // mayonnaise
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "107" ] // dinosaur egg
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "807" ] // dinosaur mayonnaise
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "442" ] // duck egg
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "307" ] // duck mayonnaise
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "928" ] // golden egg
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "928" ], // mayonnaise
-                            "MaxOutput": 3
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "289" ] // ostrich egg
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "306" ], // mayonnaise
-                            "MaxOutput": 10
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "305" ] // void egg
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "308" ] // void mayonnaise
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* oil maker */
-        {
-            "MachineID": 19,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "430" ] // truffle
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "432" ] // truffle oil
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "270", "421", "431" ] // corn, sunflower, sunflower seeds
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "247" ] // oil
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* preserves jar */
-        {
-            "MachineID": 15,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ -79 ] // any fruit
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "344" ] // jelly
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ -75 ] // any vegetable
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "342" ] // pickled
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "829" ] // ginger
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        // pickled ginger
-                        {
-                            "Ids": [ "342" ],
-                            "PreserveType": "Pickle",
-                            "PreservedParentSheetIndex": "829"
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        // sturgeon roe
-                        {
-                            "PossibleIds": [ "812" ],
-                            "PreserveType": "Roe",
-                            "PreservedParentSheetIndex": "698"
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "445" ] // caviar
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "812" ] // roe (non-sturgeon)
-                        }
-                    ],
-                    "ExceptIngredients": [
-                        // sturgeon roe
-                        {
-                            "PossibleIds": [ "812" ],
-                            "PreserveType": "Roe",
-                            "PreservedParentSheetIndex": "698"
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "447" ] // aged roe
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* recycling machine */
-        {
-            "MachineID": 20,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "168" ] // trash
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "382" ], // coal
-                            "MinOutput": 1,
-                            "MaxOutput": 3,
-                            "OutputChance": 30
-                        },
-                        {
-                            "Ids": [ "380" ], // iron ore
-                            "MinOutput": 1,
-                            "MaxOutput": 3,
-                            "OutputChance": 21
-                        },
-                        {
-                            "Ids": [ "390" ], // stone
-                            "MinOutput": 1,
-                            "MaxOutput": 3,
-                            "OutputChance": 49
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "169" ] // driftwood
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "382" ], // coal
-                            "MinOutput": 1,
-                            "MaxOutput": 3,
-                            "OutputChance": 25
-                        },
-                        {
-                            "Ids": [ "388" ], // wood
-                            "MinOutput": 1,
-                            "MaxOutput": 3,
-                            "OutputChance": 75
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "170" ] // broken glasses
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "338" ] // refined quartz
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "171" ] // broken CD
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "338" ] // refined quartz
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "172" ] // soggy newspaper
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "428" ], // cloth
-                            "OutputChance": 10
-                        },
-                        {
-                            "Ids": [ "93" ], // torch
-                            "MinOutput": 3,
-                            "OutputChance": 90
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* slime egg-press */
-        {
-            "MachineID": 158,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "766" ], // slime
-                            "Count": 100
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "680" ], // green slime egg
-                            "OutputChance": 64
-                        },
-                        {
-                            "Ids": [ "439" ], // purple slime egg
-                            "OutputChance": 5
-                        },
-                        {
-                            "Ids": [ "437" ], // red slime egg
-                            "OutputChance": 10
-                        },
-                        {
-                            "Ids": [ "413" ], // blue slime egg
-                            "OutputChance": 21
-                        }
-                    ]
-                }
-            ]
-        },
-
-        /* wood chipper */
-        {
-            "MachineID": 211,
-            "Recipes": [
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "709" ] // hardwood
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "724" ], // maple syrup
-                            "OutputChance": 0.67
-                        },
-                        {
-                            "Ids": [ "725" ], // oak resin
-                            "OutputChance": 0.67
-                        },
-                        {
-                            "Ids": [ "726" ], // pine tar
-                            "OutputChance": 0.67
-                        },
-                        {
-                            "Ids": [ "388" ], // wood
-                            "MinOutput": 5,
-                            "MaxOutput": 10,
-                            "OutputChance": 88.2
-                        },
-                        {
-                            "Ids": [ "388" ], // wood
-                            "MinOutput": 15,
-                            "MaxOutput": 20,
-                            "OutputChance": 9.8
-                        }
-                    ]
-                },
-                {
-                    "Ingredients": [
-                        {
-                            "PossibleIds": [ "169" ] // driftwood
-                        }
-                    ],
-                    "PossibleOutputs": [
-                        {
-                            "Ids": [ "388" ], // wood
-                            "MinOutput": 5,
-                            "MaxOutput": 9
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
 
     /*********
     ** Added metadata for NPCs (including villagers, pets, farm animals, monsters, etc).
@@ -1017,50 +186,50 @@ You shouldn't change this file unless you know what you're doing.
      */
     "CustomFishSpawnRules": {
         // Octopus
-        "149": {
+        "(O)149": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
                 }
             ]
         },
 
         // Seaweed
-        "152": {
+        "(O)152": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
                 }
             ]
         },
 
         // Sea Cucumber
-        "154": {
+        "(O)154": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
                 }
             ]
         },
 
         // Super Cucumber
-        "155": {
+        "(O)155": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
                 }
             ]
         },
 
         // Stonefish
-        "158": {
+        "(O)158": {
             "Locations": [
                 {
-                    "LocationName": "UndergroundMine",
+                    "LocationId": "UndergroundMine",
                     "Area": 20,
                     "Seasons": [ "spring", "summer", "fall", "winter" ]
                 }
@@ -1068,12 +237,12 @@ You shouldn't change this file unless you know what you're doing.
         },
 
         // Crimsonfish (legendary)
-        "159": {
+        "(O)159": {
             "IsUnique": true,
             "MinFishingLevel": 5,
             "Locations": [
                 {
-                    "LocationName": "Beach",
+                    "LocationId": "Beach",
                     "Area": "east-pier",
                     "Seasons": [ "summer" ]
                 }
@@ -1081,12 +250,12 @@ You shouldn't change this file unless you know what you're doing.
         },
 
         // Angler (legendary)
-        "160": {
+        "(O)160": {
             "IsUnique": true,
             "MinFishingLevel": 3,
             "Locations": [
                 {
-                    "LocationName": "Town",
+                    "LocationId": "Town",
                     "Area": "northmost-bridge",
                     "Seasons": [ "fall" ]
                 }
@@ -1094,10 +263,10 @@ You shouldn't change this file unless you know what you're doing.
         },
 
         // Ice Pip
-        "161": {
+        "(O)161": {
             "Locations": [
                 {
-                    "LocationName": "UndergroundMine",
+                    "LocationId": "UndergroundMine",
                     "Area": 60,
                     "Seasons": [ "spring", "summer", "fall", "winter" ]
                 }
@@ -1105,10 +274,10 @@ You shouldn't change this file unless you know what you're doing.
         },
 
         // Lava Eel
-        "162": {
+        "(O)162": {
             "Locations": [
                 {
-                    "LocationName": "UndergroundMine",
+                    "LocationId": "UndergroundMine",
                     "Area": 100,
                     "Seasons": [ "spring", "summer", "fall", "winter" ]
                 }
@@ -1116,36 +285,36 @@ You shouldn't change this file unless you know what you're doing.
         },
 
         // Legend (legendary)
-        "163": {
+        "(O)163": {
             "IsUnique": true,
             "MinFishingLevel": 10,
             "Weather": "Rainy",
             "Locations": [
                 {
-                    "LocationName": "Mountain",
+                    "LocationId": "Mountain",
                     "Seasons": [ "spring" ]
                 }
             ]
         },
 
         // Mutant Carp (legendary)
-        "682": {
+        "(O)682": {
             "IsUnique": true,
             "Locations": [
                 {
-                    "LocationName": "Sewer",
+                    "LocationId": "Sewer",
                     "Seasons": [ "spring", "summer", "fall", "winter" ]
                 }
             ]
         },
 
         // Glacierfish (legendary)
-        "775": {
+        "(O)775": {
             "IsUnique": true,
             "MinFishingLevel": 6,
             "Locations": [
                 {
-                    "LocationName": "Forest",
+                    "LocationId": "Forest",
                     "Area": "island-tip",
                     "Seasons": [ "winter" ]
                 }
@@ -1153,31 +322,88 @@ You shouldn't change this file unless you know what you're doing.
         },
 
         // Midnight Squid
-        "798": {
+        "(O)798": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
                 }
             ]
         },
 
         // Spook Fish
-        "799": {
+        "(O)799": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
                 }
             ]
         },
 
         // Blobfish
-        "800": {
+        "(O)800": {
             "Locations": [
                 {
-                    "LocationName": "Submarine",
+                    "LocationId": "Submarine",
                     "Seasons": [ "winter" ]
+                }
+            ]
+        },
+
+        // Son of Crimsonfish
+        "(O)898": {
+            "MinFishingLevel": 5,
+            "Locations": [
+                {
+                    "LocationId": "Beach",
+                    "Area": "east-pier",
+                    "Seasons": [ "spring", "summer", "fall", "winter" ]
+                }
+            ]
+        },
+
+        // Ms. Angler
+        "(O)899": {
+            "MinFishingLevel": 3,
+            "Locations": [
+                {
+                    "LocationId": "Town",
+                    "Area": "northmost-bridge",
+                    "Seasons": [ "spring", "summer", "fall", "winter" ]
+                }
+            ]
+        },
+
+        // Legend II
+        "(O)900": {
+            "MinFishingLevel": 10,
+            "Locations": [
+                {
+                    "LocationId": "Mountain",
+                    "Seasons": [ "spring", "summer", "fall", "winter" ]
+                }
+            ]
+        },
+
+        // Radioactive Carp
+        "(O)901": {
+            "Locations": [
+                {
+                    "LocationId": "Sewer",
+                    "Seasons": [ "spring", "summer", "fall", "winter" ]
+                }
+            ]
+        },
+
+        // Glacierfish Jr.
+        "(O)902": {
+            "MinFishingLevel": 6,
+            "Locations": [
+                {
+                    "LocationId": "Forest",
+                    "Area": "island-tip",
+                    "Seasons": [ "spring", "summer", "fall", "winter" ]
                 }
             ]
         }
@@ -1186,7 +412,8 @@ You shouldn't change this file unless you know what you're doing.
     "IgnoreFishingLocations": [
         "Temp",
         "fishingGame",
-        "IslandSecret"
+        "IslandSecret",
+        "Backwoods"
     ],
 
     /*********
@@ -1221,72 +448,6 @@ You shouldn't change this file unless you know what you're doing.
         }
     ],
 
-    /*********
-    ** Information about Adventure Guild monster-slaying quests.
-    ** Extracted from AdventureGuild::showMonsterKillList().
-    *********/
-    "AdventureGuildQuests": [
-        {
-            "KillListKey": "Slimes",
-            "Targets": [ "Green Slime", "Frost Jelly", "Sludge", "Tiger Slime" ],
-            "RequiredKills": 1000
-        },
-        {
-            "KillListKey": "VoidSpirits",
-            "Targets": [ "Shadow Guy", "Shadow Shaman", "Shadow Brute", "Shadow Sniper" ],
-            "RequiredKills": 150
-        },
-        {
-            "KillListKey": "Skeletons",
-            "Targets": [ "Skeleton", "Skeleton Mage" ],
-            "RequiredKills": 50
-        },
-        {
-            "KillListKey": "RockCrabs",
-            "Targets": [ "Rock Crab", "Lava Crab", "Iridium Crab" ],
-            "RequiredKills": 60
-        },
-        {
-            "KillListKey": "CaveInsects",
-            "Targets": [ "Grub", "Fly", "Bug" ],
-            "RequiredKills": 125
-        },
-        {
-            "KillListKey": "Bats",
-            "Targets": [ "Bat", "Frost Bat", "Lava Bat", "Iridium Bat" ],
-            "RequiredKills": 200
-        },
-        {
-            "KillListKey": "Duggies",
-            "Targets": [ "Duggy", "Magma Duggy" ],
-            "RequiredKills": 30
-        },
-        {
-            "KillListKey": "DustSprites",
-            "Targets": [ "Dust Spirit" ],
-            "RequiredKills": 500
-        },
-        {
-            "KillListKey": "Mummies",
-            "Targets": [ "Mummy" ],
-            "RequiredKills": 100
-        },
-        {
-            "KillListKey": "PepperRex",
-            "Targets": [ "Pepper Rex" ],
-            "RequiredKills": 50
-        },
-        {
-            "KillListKey": "Serpent",
-            "Targets": [ "Serpent", "Royal Serpent" ],
-            "RequiredKills": 250
-        },
-        {
-            "KillListKey": "MagmaSprite",
-            "Targets": [ "Magma Sprite", "Magma Sparker" ],
-            "RequiredKills": 150
-        }
-    ],
 
     /*********
     ** Puzzle solutions

@@ -8,8 +8,8 @@
     "config.enabled.desc": "Otomasyon özelliklerinin aktifleştirilip aktifleştirilmeyeceği. Devre dışı bırakıldıysa hiçbir makine otomatik olarak çalışmaz.",
     "config.automation-interval.name": "Otomasyon aralığı",
     "config.automation-interval.desc": "Her bir otomasyon süreci arasındaki tıklama sayısı (saniyede bir kez 60, iki saniyede bir 120, vb.).",
-    "config.min-minutes-for-fairy-dust.name": "Min minutes for fairy dust", // TODO
-    "config.min-minutes-for-fairy-dust.desc": "The minimum machine processing time in minutes for which to apply fairy dust. For example, setting this to 30 minutes means fairy dust won't be applied if the machine would finish in 20 minutes without it.", // TODO
+    "config.min-minutes-for-fairy-dust.name": "Peri tozu için en az süre",
+    "config.min-minutes-for-fairy-dust.desc": "Peri tozu kullanılması için en az makine işleme süresi. Örnek olarak; 30 dakikaya ayarlanırsa, 20 dakika içerisinde bitecek işlem için peri tozu kullanılmayacaktır.",
     "config.toggle-overlay-key.name": "Kaplama anahtarını aç/kapat",
     "config.toggle-overlay-key.desc": "Otomasyon kaplamasını değiştiren tuşlar.",
     "config.warn-for-missing-bridge-mod.name": "Eksik köprü modu için uyar",
@@ -41,5 +41,16 @@
     "config.machine-settings-enabled.Name": "Etkin",
     "config.machine-settings-enabled.desc": "{{machineName}} otomasyonunun etkinleştirilip etkinleştirilmeyeceği.",
     "config.machine-settings-priority.name": "Öncelik",
-    "config.machine-settings-priority.desc": "Diğer makinelerle kıyasla {{machineName}} makinelerinin işlenme öncelik sırası. Makinelerin varsayılan önceliği 0'dır, daha yüksek değerler önce işlenir."
+    "config.machine-settings-priority.desc": "Diğer makinelerle kıyasla {{machineName}} makinelerinin işlenme öncelik sırası. Makinelerin varsayılan önceliği 0'dır, daha yüksek değerler önce işlenir.",
+
+    // machine names
+    "config.machines.bush": "Çalı",
+    "config.machines.fruit-tree": "Ağaç (Meyve Ağacı)",
+    "config.machines.trash-can": "Çöp Kutusu",
+    "config.machines.wild-tree": "Ağaç (Vahşi Ağaç)",
+    "config.machines.feed-hopper": "Yem Hunisi ve Silo",
+
+    // special settings for individual machines
+    "config.machines.wild-tree.collect-moss.name": "Yosunları Topla",
+    "config.machines.wild-tree.collect-moss.desc": "Yosunların toplanıp toplanmayacağı. Örneğin, ağaçlardaki yosunu toplamamak Mantar Kütüğü tarafından üretilecek mantarların kalitesini arttırır."
 }

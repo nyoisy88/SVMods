@@ -24,6 +24,9 @@
     "config.harvest.name": "เก็บเกี่ยว",
     "config.harvest.tooltip": "ต้องการเก็บเกี่ยวพืชผลและอาหารด้วยมือเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
 
+    "config.hold-up-item.name": "Hold up item", // TODO
+    "config.hold-up-item.tooltip": "How fast you hold up an item. Default {{defaultValue}}x.", // TODO
+
     "config.horse-flute.name": "เล่นขลุ่ยม้า",
     "config.horse-flute.tooltip": "ต้องการเล่นขลุ่ยม้าให้มันเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
 
@@ -33,6 +36,9 @@
     "config.mount.name": "ขึ้น/ลงจากหลังม้า",
     "config.mount.tooltip": "ต้องการขึ้นหรือลงจากม้าให้มันเร็วแค่ไหน (รวมถึงการขึ้นหรือการขี่แบบกำหนดเองเช่น ม็อดรถแทรกเตอร์) ค่าเริ่มต้นคือ {{defaultValue}}x",
 
+    "config.read-book.name": "อ่านหนังสือ",
+    "config.read-book.tooltip": "ต้องการอ่านหนังสือให้จบเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x.",
+
     "config.shear.name": "เครื่องมือที่ตัด",
     "config.shear.tooltip": "ต้องการใช้เครื่องที่ตัดให้มันเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
 
@@ -41,6 +47,9 @@
 
     "config.tool.name": "เครื่องมือที่แกว่ง",
     "config.tool.tooltip": "ต้องการใช้เครื่องมือที่แกว่งให้มันเร็วแค่ไหน (ยกเว้นอาวุธและคันเบ็ด) ค่าเริ่มต้นคือ {{defaultValue}}x, ขอแนะนำ {{defaultValue}}x",
+
+    "config.use-totem.name": "ใช้โทเทม",
+    "config.use-totem.tooltip": "ต้องการใช้โทเทมให้เสร็จเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x.",
 
     "config.weapon.name": "อาวุธที่แกว่ง",
     "config.weapon.tooltip": "ต้องการใช้อาวุธที่แกว่งให้มันเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x, ขอแนะนำ {{defaultValue}}x",
@@ -53,23 +62,62 @@
     "config.break-geodes.name": "ทำลาย geodes",
     "config.break-geodes.tooltip": "ต้องการให้ช่างตีเหล็กทำลาย geodes ให้คุณเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
 
-    "config.casino-slots.name": "สล็อตคาสิโน",
-    "config.casino-slots.tooltip": "ต้องการให้สล็อตคาสิโนหมุนเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
-
     "config.bus.name": "รถบัสของแพม",
     "config.bus.tooltip": "ต้องการให้แพมขับรถบัสไปและกลับจากทะเลทรายได้เร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
 
+    "config.casino-slots.name": "สล็อตคาสิโน",
+    "config.casino-slots.tooltip": "ต้องการให้สล็อตคาสิโนหมุนเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
+
+    "config.fade.name": "Fade", // TODO
+    "config.fade.tooltip": "How fast the screen fades to black and fades back in. Default {{defaultValue}}x.", // TODO
+
+    "config.fishing-treasure.name": "Fishing treasure chest", // TODO
+    "config.fishing-treasure.tooltip": "How fast you open a fishing treasure chest. Default {{defaultValue}}x.", // TODO
+
+    "config.forge.name": "Forge", // TODO
+    "config.forge.tooltip": "How fast the volcano forge works. Default {{defaultValue}}x.", // TODO
+
+    "config.open-chest.name": "เปิดกล่องเก็บของ",
+    "config.open-chest.tooltip": "ต้องการให้เปิดกล่องเก็บของเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x.",
+
+    "config.parrot-express.name": "Parrot express", // TODO
+    "config.parrot-express.tooltip": "How fast the parrot express runs. Default {{defaultValue}}x.", // TODO
+
+    "config.prize-ticket-machine.name": "Prize ticket machine", // TODO
+    "config.prize-ticket-machine.tooltip": "How fast Lewis' prize ticket machine accepts a ticket and produces an item. Default {{defaultValue}}x.", // TODO
+
+    "config.tailor.name": "Tailor", // TODO
+    "config.tailor.tooltip": "How fast the sewing machine works. Default {{defaultValue}}x.", // TODO
+
     "config.tree-fall.name": "ต้นไม้ล้มลงพื้น",
     "config.tree-fall.tooltip": "ต้องต้นไม้ล้มลงถึงพื้นเร็วแค่ไหนหลังจากที่คุณโค่นมันแล้ว ค่าเริ่มต้นคือ {{defaultValue}}x, ขอแนะนำ {{suggestedValue}}x",
+
+    "config.wheel-spin.name": "Wheel spin", // TODO
+    "config.wheel-spin.tooltip": "How fast the Stardew Valley Fair wheel minigame spins. Default {{defaultValue}}x.", // TODO
 
     /****
     ** 'UI Animation Speeds' section
     ****/
     "config.ui-speeds": "ความเร็วของภาพเคลื่อนไหว UI",
 
+    "config.dialogue-typing.name": "ความเร็วข้อความของบทสนทนา",
+    "config.dialogue-typing.tooltip": "ต้องการให้ข้อความบทสนทนาแสดงจบเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x",
+
+    "config.open-dialogue-box.name": "แสดงบทสทนา",
+    "config.open-dialogue-box.tooltip": "ต้องการแสดงบทสนทนาเร็วแค่ไหน ค่าเริ่มต้นคือ {{defaultValue}}x.",
+
     "config.title-menu.name": "การเปลี่ยนเมนูชื่อเรื่อง",
     "config.title-menu.tooltip": "ความเร็วในการเปลี่ยนเมนูชื่อเรื่องระหว่างหน้าจอ ค่าเริ่มต้นคือ {{defaultValue}}x",
 
     "config.load-game-blink.name": "กะพริบโหลดเกม",
-    "config.load-game-blink.tooltip": "ความหน่วงของช่องกะพริบเกิดขึ้นเร็วแค่ไหนหลังจากที่คุณคลิกช่องบันทึกโหลด ค่าเริ่มต้นคือ {{defaultValue}}x"
+    "config.load-game-blink.tooltip": "ความหน่วงของช่องกะพริบเกิดขึ้นเร็วแค่ไหนหลังจากที่คุณคลิกช่องบันทึกโหลด ค่าเริ่มต้นคือ {{defaultValue}}x",
+
+    /****
+    ** 'Experimental' section
+    ****/
+    "config.experimental": "Experimental options", // TODO
+    "config.experimental-warning": "These options aren't fully stable yet, and may cause issues like freezes and crashes. Enabling any of these isn't recommended.", // TODO
+
+    "config.event.name": "Event cutscene", // TODO
+    "config.event.tooltip": "How fast event cutscenes play. Default {{defaultValue}}x, suggested {{suggestedValue}}x." // TODO
 }

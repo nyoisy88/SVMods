@@ -2,6 +2,10 @@
     /*********
     ** Generic translations
     *********/
+    // language info
+    "generic.list-separator": ", ", // text between listed values (like ", " in "A, B, C")
+    "generic.line-wrap-on": "", // characters after which we can line-wrap text if needed, even if there's no space
+
     // date names
     "generic.now": "now",
     "generic.tomorrow": "tomorrow",
@@ -27,6 +31,7 @@
     "generic.price": "{{price}}g",
     "generic.price-for-quality": "{{price}}g ({{quality}})",
     "generic.price-for-stack": "{{price}}g for stack of {{count}}",
+    "generic.show-x-results": "show {{count}} results",
 
     // types
     "type.building": "Building",
@@ -45,6 +50,9 @@
     "quality.gold": "gold",
     "quality.iridium": "iridium",
 
+    // item names shown in recipes
+    "item.wild-seeds": "Wild Seeds (Any)",
+
     // NPC friendship
     "friendship-status.friendly": "Friendly",
     "friendship-status.dating": "Dating",
@@ -52,6 +60,10 @@
     "friendship-status.married": "Married",
     "friendship-status.divorced": "Divorced",
     "friendship-status.kicked-out": "Kicked out",
+
+    // custom content (shows which mod added an item, NPC, etc)
+    "added-by-mod": "Added by mod",
+    "added-by-mod.summary": "{{modName}}",
 
 
     /*********
@@ -97,42 +109,65 @@
     "data.item.box.description": "Break apart to obtain sundry goods.",
 
     // location names
-    "location.backwoods": "backwoods",
-    "location.beach": "beach",
-    "location.beach.east-pier": "beach (eastern pier)",
-    "location.bugLand": "mutant bug lair",
-    "location.busStop": "bus stop",
-    "location.desert": "desert",
-    "location.farm": "farm",
-    "location.farmCave": "farm cave",
-    "location.farmHouse": "farmhouse",
-    "location.forest": "forest",
-    "location.forest.fish-area-0": "forest river",
-    "location.forest.fish-area-1": "forest pond",
-    "location.forest.island-tip": "forest river (south tip of large island)",
-    "location.mountain": "mountain",
-    "location.railroad": "railroad",
-    "location.sewer": "sewers",
-    "location.submarine": "Night Market submarine",
-    "location.town": "town",
-    "location.town.northmost-bridge": "town (northmost bridge)",
-    "location.tunnel": "bus tunnel",
-    "location.undergroundMine": "mines",
-    "location.undergroundMine.level": "mine level {{level}}",
-    "location.witchSwamp": "witch's swamp",
-    "location.woods": "secret woods",
+    "location.beach.east-pier": "{{locationName}} (eastern pier)",
+    "location.bugLand": "Mutant Bug Lair",
+    "location.desert.topPond": "{{locationName}} (north pond)",
+    "location.farmCave": "Farm Cave",
+    "location.farmHouse": "Farmhouse",
+    "location.forest.island-tip": "{{locationName}} (river near south tip of large island)",
+    "location.forest.lake": "{{locationName}} (pond)",
+    "location.forest.river": "{{locationName}} (river)",
+    "location.HarveyRoom": "Harvey's Room",
+    "location.LeoTreeHouse": "Treehouse",
+    "location.SandyHouse": "Oasis",
+    "location.SebastianRoom": "Sebastian's Room",
+    "location.submarine": "Night Market Submarine",
+    "location.town.northmost-bridge": "{{locationName}} (northmost bridge)",
+    "location.undergroundMine": "Mines",
+    "location.undergroundMine.level": "Mine Level {{level}}",
+    "location.witchSwamp": "Witch's Swamp",
 
-    "location.caldera": "Ginger Island caldera",
-    "location.islandEast": "Ginger Island east",
-    "location.islandNorth": "Ginger Island north",
-    "location.islandSouth": "Ginger Island south",
-    "location.islandSouthEast": "Ginger Island southeast",
-    "location.islandSouthEastCave": "Ginger Island southeast cave",
-    "location.islandWest": "Ginger Island west",
-    "location.islandWest.fish-area-1": "Ginger Island west (ocean)",
-    "location.islandWest.fish-area-2": "Ginger Island west (pond)",
+    "location.caldera": "Ginger Island Caldera",
+    "location.islandEast": "Ginger Island East",
+    "location.islandNorth": "Ginger Island North",
+    "location.islandSouth": "Ginger Island South",
+    "location.islandSouthEast": "Ginger Island Southeast",
+    "location.islandSouthEastCave": "Ginger Island Southeast Cave",
+    "location.islandWest": "Ginger Island West",
+    "location.islandWest.freshwater": "Ginger Island West (pond)",
+    "location.islandWest.ocean": "Ginger Island West (ocean)",
 
+    "location.fish-area": "{{locationName}} ({{areaName}})",
     "location.unknown-fish-area": "{{locationName}} (fishing area {{id}})",
+
+
+    /*********
+    ** Conditions & context tags
+    *********/
+    "condition-or-context-tag.negate": "not {{value}}",
+
+    "condition.day-of-month": "on specific days ({{days}})",
+    "condition.day-of-month.even": "even days",
+    "condition.day-of-month.odd": "odd days",
+
+    "condition.item-type.input": "input item",
+    "condition.item-type.target": "target item",
+
+    "condition.raw-context-tag": "context tag \"{{tag}}\"",
+    "condition.raw-condition": "query \"{{tag}}\"",
+
+    "condition.item-context-tag": "{{item}} has context tag {{tags}}",
+    "condition.item-context-tags": "{{item}} has context tags {{tags}}",
+    "condition.item-context-tag.value": "'{{tag}}'", // the format of each context tag in the list (each context tag isn't translated)
+
+    "condition.item-edibility.edible": "{{item}} is edible",
+    "condition.item-edibility.min": "{{item}} has edibility of {{min}} or more",
+    "condition.item-edibility.range": "{{item}} has edibility of {{min}} to {{max}}",
+
+    "context-tag.bone": "any bone",
+    "context-tag.egg": "any egg",
+    "context-tag.large-egg": "any large egg",
+    "context-tag.preserved-item": "preserved {{name}}",
 
 
     /*********
@@ -162,6 +197,7 @@
     // labels
     "building.animals": "Animals",
     "building.construction": "Construction",
+    "building.construction-costs": "Construction costs",
     "building.feed-trough": "Feed trough",
     "building.horse": "Horse",
     "building.horse-location": "Horse location",
@@ -282,7 +318,6 @@
     ** Item > generic lookups
     *********/
     // labels
-    "item.custom-item": "Custom item",
     "item.contents": "Contents",
     "item.loves-this": "Loves this",
     "item.likes-this": "Likes this",
@@ -301,7 +336,6 @@
     "item.produces-dye": "Produces dye",
 
     // values
-    "item.custom-item.summary": "added by {{modName}}",
     "item.contents.placed": "{{name}} placed",
     "item.contents.ready": "{{name}} ready",
     "item.contents.partial": "{{name}} in {{time}}",
@@ -309,14 +343,19 @@
     "item.undiscovered-gift-taste-appended": ", and {{count}} unrevealed villagers",
     "item.needed-for.community-center": "community center ({{bundles}})",
     "item.needed-for.full-shipment": "full shipment achievement (ship one)",
+    "item.needed-for.monoculture": "monoculture achievement (ship {{count}} more)",
     "item.needed-for.polyculture": "polyculture achievement (ship {{count}} more)",
     "item.needed-for.full-collection": "full collection achievement (donate one to museum)",
     "item.needed-for.gourmet-chef": "gourmet chef achievement (cook {{recipes}})",
     "item.needed-for.craft-master": "craft master achievement (make {{recipes}})",
     "item.needed-for.quests": "current quests ({{quests}})",
+    "item.unknown-recipes": "{{count}} unknown recipes",
     "item.sells-to.shipping-box": "shipping box",
     "item.recipes-for-ingredient.entry": "{{name}} (needs {{count}})",
     "item.recipes-for-machine.multiple-items": "{{name}} x{{count}}",
+    "item.recipes-for-machine.same-as-input": "[same as input]", // e.g. crystalarium produces same item that was put in
+    "item.recipes-for-machine.conditions": "[conditions: {{conditions}}]",
+    "item.recipes-for-machine.too-complex": "Some machine rules are too dynamic to display.",
     "item.number-owned.summary": "you own {{count}} of these",
     "item.number-crafted.summary": "you made {{count}} of these",
 
@@ -365,6 +404,7 @@
     // values
     "item.fish-spawn-rules.min-fishing-level": "min fishing level: {{level}}",
     "item.fish-spawn-rules.not-caught-yet": "not caught yet (can only be caught once)",
+    "item.fish-spawn-rules.extended-family-quest-active": "\"Extended Family\" quest active",
     "item.fish-spawn-rules.locations": "locations: {{locations}}",
     "item.fish-spawn-rules.locations-by-season.label": "locations:",
     "item.fish-spawn-rules.locations-by-season.season-locations": "{{season}}: {{locations}}",
@@ -457,6 +497,7 @@
     "npc.neutral-gifts": "Neutral gifts",
     "npc.dislikes-gifts": "Dislikes gifts",
     "npc.hates-gifts": "Hates gifts",
+    "npc.schedule": "Today's schedule",
 
     // values
     "npc.can-romance.married": "You're married! <", // < turns into a heart
@@ -466,6 +507,9 @@
     "npc.friendship.need-points": "next in {{count}} pts",
     "npc.undiscovered-gift-taste": "{{count}} unrevealed items",
     "npc.unowned-gift-taste": "{{count}} unowned items",
+    "npc.schedule.current-position": "Currently at {{locationName}} ({{x}}, {{y}}).",
+    "npc.schedule.no-entries": "No schedule loaded.",
+    "npc.schedule.entry": "{{time}}: walk to {{locationName}} ({{x}}, {{y}}).",
 
 
     /*********
@@ -536,7 +580,7 @@
 
     // values
     "puzzle.solution.solved": "Puzzle solved!",
-    "puzzle.solution.hidden": "Puzzle solutions are hidden in progression mode.",
+    "puzzle.solution.hidden": "Puzzle solutions are hidden per your settings.",
 
 
     /*********
@@ -616,6 +660,8 @@
     "tree.name.oak": "Oak Tree",
     "tree.name.palm": "Palm Tree",
     "tree.name.pine": "Pine Tree",
+    "tree.name.mossy": "Mossy Tree",
+    "tree.name.mystic": "Mystic Tree",
     "tree.name.unknown": "Unknown Tree",
     "tree.stage.done": "Fully grown",
     "tree.stage.partial": "{{stageName}} ({{step}} of {{max}})",
@@ -640,10 +686,20 @@
     *********/
     // main options
     "config.title.main-options": "Main options",
-    "config.progression-mode.name": "Progression mode",
-    "config.progression-mode.desc": "Whether to hide some content (e.g. gift tastes and puzzle solutions) until you've discovered it in-game.",
     "config.force-full-screen.name": "Force full screen",
     "config.force-full-screen.desc": "Whether the menu should always be full-screen, instead of centered in the window. This is mainly useful when viewing data mining fields.",
+
+    // progression mode
+    "config.title.progression": "Progression mode",
+
+    "config.progression.show-unknown-gift-tastes.name": "Show unknown gift tastes",
+    "config.progression.show-unknown-gift-tastes.desc": "Whether to show gift tastes you haven't learned about in-game yet (e.g. from dialogue text or experimenting).",
+
+    "config.progression.show-unknown-recipes.name": "Show unknown recipes",
+    "config.progression.show-unknown-recipes.desc": "Whether to show recipes you haven't learned in-game yet.",
+
+    "config.progression.show-puzzle-solutions.name": "Show puzzle solutions",
+    "config.progression.show-puzzle-solutions.desc": "Whether to show puzzle solutions.",
 
     // gift tastes
     "config.title.gift-tastes": "Gift tastes",
@@ -664,12 +720,25 @@
     "config.highlight-unrevealed-gift-tastes.name": "Highlight unrevealed gifts",
     "config.highlight-unrevealed-gift-tastes.desc": "Whether to highlight item gift tastes which haven't been revealed in the NPC profile. When enabled, unrevealed gift tastes will be bold.",
 
+    // collapse fields
+    "config.title.collapse-fields": "Collapse large fields",
+
+    "config.collapse-fields.enabled.name": "Enabled",
+    "config.collapse-fields.enabled.desc": "Whether to collapse large fields, so the lookup menu will replace the list with a clickable 'show X values' link to expand it.",
+
+    "config.collapse-fields.building-recipes.name": "Building lookup: recipes",
+    "config.collapse-fields.item-recipes.name": "Item lookup: recipes",
+    "config.collapse-fields.npc-gift-tastes.name": "NPC lookup: gift tastes",
+    "config.collapse-fields.any.desc": "If the field contains this many values, the lookup menu will replace the list with a clickable 'show X values' link to expand it.",
+
     // advanced options
     "config.title.advanced-options": "Advanced options",
     "config.tile-lookups.name": "Tile lookups",
     "config.tile-lookups.desc": "Whether to include map tiles as lookup targets.",
     "config.data-mining-fields.name": "Show data mining fields",
     "config.data-mining-fields.desc": "Whether to show raw data useful for data miners (as separate fields at the bottom of lookup results). This is an advanced feature not intended for most players.",
+    "config.show-invalid-recipes.name": "Show invalid recipes",
+    "config.show-invalid-recipes.desc": "Whether to show recipes which require or produce broken items.",
     "config.target-redirection.name": "Target redirection",
     "config.target-redirection.desc": "In some cases the game spawns a temporary entity to represent another one. For example, Abigail in the mines is actually a temporary NPC with the name 'AbigailMine', so looking her up there won't show Abigail's real info. With this option enabled, Lookup Anything will look up the original Abigail instead.",
     "config.scroll-amount.name": "Scroll amount",

@@ -1,0 +1,20 @@
+{
+  "config.modEnabled": "MODの有効化",
+  "config.toggleButton": "切り替えキー",
+  "config.onlyWhenHolding": "どうぐを所持時のみ",
+  "config.switchFromWeapon": "武器",
+  "config.switchForAnimals": "家畜用どうぐ",
+  "config.switchForMonsters": "モンスターへの攻撃",
+  "config.maxMonsterDistance": "モンスターへの反応距離",
+  "config.switchForTrees": "木(成木にはオノ、それ以外はカマ)",
+  "config.switchForGrass": "草",
+  "config.switchForCrops": "作物",
+  "config.harvestWithScythe": "カマで収穫",
+  "config.switchForResourceClumps": "岩",
+  "config.switchForPan": "砂金皿",
+  "config.switchForWateringCan": "ジョウロ",
+  "config.switchForTilling": "耕作",
+  "config.switchForWatering": "水やり",
+  "config.switchForFishing": "釣り(ジョウロが有効の場合は無効)",
+  "config.switchForObjects": "オブジェクト"
+}

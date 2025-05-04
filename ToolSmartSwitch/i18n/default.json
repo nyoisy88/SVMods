@@ -1,0 +1,20 @@
+{
+  "config.modEnabled": "Mod Enabled",
+  "config.toggleButton": "Toggle Button",
+  "config.onlyWhenHolding": "Only When Holding Tool",
+  "config.switchFromWeapon": "Switch From Weapon",
+  "config.switchForAnimals": "Switch For Animals",
+  "config.switchForMonsters": "Switch For Monsters",
+  "config.maxMonsterDistance": "Max Monster Distance",
+  "config.switchForTrees": "Switch For Trees",
+  "config.switchForGrass": "Switch For Grass",
+  "config.switchForCrops": "Switch For Crops",
+  "config.harvestWithScythe": "Harvest With Scythe (Mod)",
+  "config.switchForResourceClumps": "Switch For Resource Clumps",
+  "config.switchForPan": "Switch For Pan",
+  "config.switchForWateringCan": "Switch For Watering Can",
+  "config.switchForTilling": "Switch For Tilling",
+  "config.switchForWatering": "Switch For Watering",
+  "config.switchForFishing": "Switch For Fishing",
+  "config.switchForObjects": "Switch For Objects"
+}

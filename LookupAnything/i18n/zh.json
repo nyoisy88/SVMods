@@ -2,6 +2,10 @@
     /*********
     ** Generic translations
     *********/
+    // language info
+    "generic.list-separator": "、", // text between listed values (like ", " in "A, B, C")
+    "generic.line-wrap-on": "、", // characters after which we can line-wrap text if needed, even if there's no space
+
     // date names
     "generic.now": "现在",
     "generic.tomorrow": "明天",
@@ -20,13 +24,14 @@
     "generic.no": "否",
     "generic.seconds": "{{count}}秒",
     "generic.minutes": "{{count}}分",
-    "generic.hours": "{{count}}小时",
+    "generic.hours": "{{count}}时",
     "generic.days": "{{count}}天",
     "generic.in-x-days": "在{{count}}天内",
     "generic.x-days-ago": "{{count}}天前",
     "generic.price": "{{price}}金",
     "generic.price-for-quality": "{{price}}金（{{quality}}）",
     "generic.price-for-stack": "{{count}}个，总共价值{{price}}金",
+    "generic.show-x-results": "显示 {{count}} 个结果",
 
     // types
     "type.building": "建筑",
@@ -45,6 +50,9 @@
     "quality.gold": "金星",
     "quality.iridium": "铱星",
 
+    // item names shown in recipes
+    "item.wild-seeds": "野生种子 (任意)",
+
     // NPC friendship
     "friendship-status.friendly": "友好的",
     "friendship-status.dating": "交往中",
@@ -52,6 +60,11 @@
     "friendship-status.married": "已结婚",
     "friendship-status.divorced": "已离婚",
     "friendship-status.kicked-out": "关系解除",
+
+    // custom content (shows which mod added an item, NPC, etc)
+    // TODO
+    "added-by-mod": "Added by mod",
+    "added-by-mod.summary": "{{modName}}",
 
 
     /*********
@@ -97,30 +110,23 @@
     "data.item.box.description": "打碎之后可以获得各种物品。",
 
     // location names
-    "location.backwoods": "边远森林",
-    "location.beach": "沙滩",
-    "location.beach.east-pier": "沙滩（码头东侧）",
+    "location.beach.east-pier": "海滩（码头东侧）",
     "location.bugLand": "突变虫穴",
-    "location.busStop": "巴士站",
-    "location.desert": "沙漠",
-    "location.farm": "农场",
+    "location.desert.topPond": "沙漠池塘",
     "location.farmCave": "农场洞穴",
     "location.farmHouse": "农舍",
-    "location.forest": "森林",
-    "location.forest.fish-area-0": "煤矿森林河流",
-    "location.forest.fish-area-1": "煤矿森林湖泊",
-    "location.forest.island-tip": "煤矿森林河流（大岛南端）",
-    "location.mountain": "山区",
-    "location.railroad": "铁路",
-    "location.sewer": "下水道",
+    "location.forest.island-tip": "煤矿森林（河流小岛南端）",
+    "location.forest.lake": "煤矿森林（湖泊）",
+    "location.forest.river": "煤矿森林（河流）",
+    "location.HarveyRoom": "Harvey's Room", // TODO
+    "location.LeoTreeHouse": "Treehouse", // TODO
+    "location.SandyHouse": "Oasis", // TODO
+    "location.SebastianRoom": "Sebastian's Room", // TODO
     "location.submarine": "夜市潜艇",
-    "location.town": "城镇",
-    "location.town.northmost-bridge": "城镇（北部桥区）",
-    "location.tunnel": "巴士隧道",
+    "location.town.northmost-bridge": "鹈鹕镇（北部桥区）",
     "location.undergroundMine": "矿井",
     "location.undergroundMine.level": "矿井层数：{{level}}",
     "location.witchSwamp": "女巫的沼泽",
-    "location.woods": "秘密森林",
 
     "location.caldera": "姜岛火山口",
     "location.islandEast": "姜岛东部",
@@ -129,10 +135,40 @@
     "location.islandSouthEast": "姜岛东南部",
     "location.islandSouthEastCave": "姜岛东南部洞穴",
     "location.islandWest": "姜岛西部",
-    "location.islandWest.fish-area-1": "姜岛西部（海洋）",
-    "location.islandWest.fish-area-2": "姜岛西部（池塘）",
+    "location.islandWest.freshwater": "姜岛西部（淡水）",
+    "location.islandWest.ocean": "姜岛西部（海洋）",
 
+    "location.fish-area": "{{locationName}} ({{areaName}})",
     "location.unknown-fish-area": "{{locationName}}（钓鱼区 {{id}}）",
+
+
+    /*********
+    ** Conditions & context tags
+    *********/
+    "condition-or-context-tag.negate": "非{{value}}",
+
+    "condition.day-of-month": "每季指定日期 ({{days}})",
+    "condition.day-of-month.even": "偶数日",
+    "condition.day-of-month.odd": "奇数日",
+
+    "condition.item-type.input": "输入物品",
+    "condition.item-type.target": "产物",
+
+    "condition.raw-context-tag": "标签 \"{{tag}}\"",
+    "condition.raw-condition": "要求 \"{{tag}}\"",
+
+    "condition.item-context-tag": "{{item}}有{{tags}}标签",
+    "condition.item-context-tags": "{{item}}有{{tags}}标签",
+    "condition.item-context-tag.value": "'{{tag}}'", // the format of each context tag in the list (each context tag isn't translated)
+
+    "condition.item-edibility.edible": "{{item}}是可食用的",
+    "condition.item-edibility.min": "{{item}}的可食用性大于等于{{min}}",
+    "condition.item-edibility.range": "{{item}}的可食用性为{{min}}到{{max}}",
+
+    "context-tag.bone": "骨头（任意）",
+    "context-tag.egg": "鸡蛋（任意）",
+    "context-tag.large-egg": "大鸡蛋（任意）",
+    "context-tag.preserved-item": "由{{name}}生产",
 
 
     /*********
@@ -162,6 +198,7 @@
     // labels
     "building.animals": "动物",
     "building.construction": "施工",
+    "building.construction-costs": "建筑材料",
     "building.feed-trough": "喂食槽",
     "building.horse": "马",
     "building.horse-location": "马位置",
@@ -175,14 +212,14 @@
     "building.animals.summary": "已容纳{{count}}只动物，最大可容纳{{max}}只动物",
     "building.construction.summary": "{{date}} 完成",
     "building.feed-trough.automated": "自动喂食",
-    "building.feed-trough.summary": "{{filled}}喂食格已填充，最大可填充喂食格为{{max}}格",
+    "building.feed-trough.summary": "{{filled}}个喂食槽已填充，最大可填充喂食槽为{{max}}个",
     "building.horse-location.summary": "{{location}}（{{x}}, {{y}}）",
     "building.junimo-harvesting-enabled": "自动收获已启用",
     "building.owner.none": "没有屋主",
     "building.output-processing": "产品处理中",
     "building.output-ready": "产品完成",
     "building.slimes.summary": "已容纳{{count}}只史莱姆，最大可容纳{{max}}只史莱姆",
-    "building.stored-hay.summary": "{{hayCount}} of {{maxHayInLocation}} hay in this location (max capacity in this building: {{maxHayInBuilding}})", // TODO
+    "building.stored-hay.summary": "该地点已存放 {{hayCount}}/{{maxHayInLocation}} 个干草（该建筑最大容量：{{maxHayInBuilding}}）",
     "building.upgrades.barn.0": "可容纳动物量上升至 4 只动物，解锁牛",
     "building.upgrades.barn.1": "可容纳动物量上升至 8 只动物，解锁繁殖和山羊",
     "building.upgrades.barn.2": "可容纳动物量上升至 12 只动物，解锁自动喂食、猪和绵羊",
@@ -192,7 +229,7 @@
     "building.upgrades.coop.0": "可容纳动物量上升至 4 只动物，解锁鸡",
     "building.upgrades.coop.1": "可容纳动物量上升至 8 只动物，解锁孵化器、恐龙和鸭",
     "building.upgrades.coop.2": "可容纳动物量上升至 12 只动物，解锁自动喂食和兔子",
-    "building.water-trough.summary": "{{filled}}个水槽已填充，最大可填充水槽量{{max}}个",
+    "building.water-trough.summary": "{{filled}}个水槽已填充，最大可填充{{max}}个水槽",
 
 
     /*********
@@ -206,7 +243,7 @@
     // values
     "building.fish-pond.population.empty": "往池塘里加一条鱼以开始养殖。",
     "building.fish-pond.population.next-spawn": "{{relativeDate}}会繁殖新鱼",
-    "building.fish-pond.drops.preface": "当满足以下列表条件时每天有{{chance}}%的机会收获水产品：",
+    "building.fish-pond.drops.preface": "当满足以下列表条件时每天有{{chance}}%几率收获水产品：",
     "building.fish-pond.drops.min-fish": "当有{{count}}条鱼时：",
     "building.fish-pond.quests.done": "扩充到{{count}}条鱼",
     "building.fish-pond.quests.incomplete-one": "扩充到{{count}}条鱼：将需要{{itemName}}",
@@ -282,7 +319,6 @@
     ** Item > generic lookups
     *********/
     // labels
-    "item.custom-item": "Custom item", // TODO
     "item.contents": "内容",
     "item.loves-this": "最爱",
     "item.likes-this": "喜欢",
@@ -301,7 +337,6 @@
     "item.produces-dye": "产生染料",
 
     // values
-    "item.custom-item.summary": "added by {{modName}}", // TODO
     "item.contents.placed": "已放置{{name}}",
     "item.contents.ready": "目前{{name}}",
     "item.contents.partial": "{{name}}在{{time}}后完成",
@@ -309,14 +344,19 @@
     "item.undiscovered-gift-taste-appended": ", 和 {{count}} 位没揭露的村民",
     "item.needed-for.community-center": "社区中心（{{bundles}}）",
     "item.needed-for.full-shipment": "全部货物成就（出货一个）",
+    "item.needed-for.monoculture": "单一栽培成就（再出货{{count}}个）",
     "item.needed-for.polyculture": "混合栽培成就（再出货{{count}}个）",
     "item.needed-for.full-collection": "全套收集成就（向博物馆捐赠一个）",
     "item.needed-for.gourmet-chef": "美食大厨成就（烹饪{{recipes}}）",
     "item.needed-for.craft-master": "制造大师成就（制造{{recipes}}）",
     "item.needed-for.quests": "当前任务（{{quests}}）",
+    "item.unknown-recipes": "{{count}}个未知配方",
     "item.sells-to.shipping-box": "出货箱",
     "item.recipes-for-ingredient.entry": "{{name}}（需要{{count}}）",
     "item.recipes-for-machine.multiple-items": "{{name}} x{{count}}",
+    "item.recipes-for-machine.same-as-input": "[与输入物品相同]", // e.g. crystalarium produces same item that was put in
+    "item.recipes-for-machine.conditions": "[条件: {{conditions}}]",
+    "item.recipes-for-machine.too-complex": "一些生产规则因太复杂而无法显示",
     "item.number-owned.summary": "你目前拥有的总数为{{count}}",
     "item.number-crafted.summary": "你已制造{{count}}个此物",
 
@@ -366,13 +406,14 @@
 
     "item.fish-spawn-rules.min-fishing-level": "最低钓鱼等级：{{level}}",
     "item.fish-spawn-rules.not-caught-yet": "尚未被抓住（只能被抓住一次）",
+    "item.fish-spawn-rules.extended-family-quest-active": "\"Extended Family\" quest active", // TODO
     "item.fish-spawn-rules.locations": "地点：{{locations}}",
     "item.fish-spawn-rules.locations-by-season.label": "地点：",
     "item.fish-spawn-rules.locations-by-season.season-locations": "{{season}}: {{locations}}",
     "item.fish-spawn-rules.season-any": "任何季节",
     "item.fish-spawn-rules.season-list": "季节：{{seasons}}",
     "item.fish-spawn-rules.time": "一天中出现时间： {{times}}",
-    "item.fish-spawn-rules.weather-sunny": "天气：晴朗",
+    "item.fish-spawn-rules.weather-sunny": "天气：晴天",
     "item.fish-spawn-rules.weather-rainy": "天气：雨天",
 
 
@@ -382,12 +423,12 @@
     // labels
     "item.melee-weapon.accuracy": "精准度",
     "item.melee-weapon.critical-chance": "暴击率",
-    "item.melee-weapon.critical-damage": "暴击伤害(力量)",
+    "item.melee-weapon.critical-damage": "暴击伤害（力量）",
     "item.melee-weapon.damage": "伤害",
     "item.melee-weapon.defense": "防御",
-    "item.melee-weapon.knockback": "击退(重量)",
+    "item.melee-weapon.knockback": "击退（重量）",
     "item.melee-weapon.reach": "范围",
-    "item.melee-weapon.speed": "攻速(速度)",
+    "item.melee-weapon.speed": "攻速（速度）",
 
     // values
     "item.melee-weapon.critical-damage.label": "{{multiplier}} 倍正常伤害(未计算玩家加成)",
@@ -428,8 +469,8 @@
     ** Monster lookups
     *********/
     // labels
-    "monster.invincible": "无敌的",
-    "monster.health": "血量",
+    "monster.invincible": "无敌",
+    "monster.health": "生命值",
     "monster.drops": "掉落",
     "monster.experience": "经验",
     "monster.defense": "防御",
@@ -458,6 +499,7 @@
     "npc.neutral-gifts": "无感",
     "npc.dislikes-gifts": "不喜欢",
     "npc.hates-gifts": "讨厌",
+    "npc.schedule": "Today's schedule", // TODO
 
     // values
     "npc.can-romance.married": "你们已结婚! ♡", // < turns into a heart
@@ -467,6 +509,9 @@
     "npc.friendship.need-points": "下一等级需要{{count}}点好感度",
     "npc.undiscovered-gift-taste": "{{count}} 个未揭露的物品",
     "npc.unowned-gift-taste": "{{count}} 个未拥有的物品",
+    "npc.schedule.current-position": "Currently at {{locationName}} ({{x}}, {{y}}).", // TODO
+    "npc.schedule.no-entries": "No schedule loaded.", // TODO
+    "npc.schedule.entry": "{{time}}: walk to {{locationName}} ({{x}}, {{y}}).", // TODO
 
 
     /*********
@@ -494,7 +539,7 @@
     "pet.water-bowl": "是否给水碗添水",
 
     // values
-    "pet.last-petted.yes": "是的（+12友好度）",
+    "pet.last-petted.yes": "是（+12友好度）",
     "pet.last-petted.days-ago": "{{days}}天前",
     "pet.last-petted.never": "还没有抚摸",
     "pet.water-bowl.empty": "水碗是空的",
@@ -511,11 +556,11 @@
     "player.gender": "性别",
     "player.housemate": "室友",
     "player.spouse": "配偶",
-    "player.watched-movie-this-week": "本周看电影",
+    "player.watched-movie-this-week": "本周看过的电影",
     "player.combat-skill": "战斗",
     "player.farming-skill": "耕种",
     "player.fishing-skill": "钓鱼",
-    "player.foraging-skill": "觅食",
+    "player.foraging-skill": "采集",
     "player.mining-skill": "采矿",
     "player.luck": "运气",
     "player.save-format": "保存格式",
@@ -537,7 +582,7 @@
 
     // values
     "puzzle.solution.solved": "谜题已解决！",
-    "puzzle.solution.hidden": "在进度模式下谜题解决方法不可见",
+    "puzzle.solution.hidden": "谜题解决方法根据您的设置隐藏",
 
 
     /*********
@@ -617,15 +662,17 @@
     "tree.name.oak": "橡树",
     "tree.name.palm": "棕榈树",
     "tree.name.pine": "松树",
+    "tree.name.mossy": "长满苔藓的树",
+    "tree.name.mystic": "神秘树",
     "tree.name.unknown": "未知",
     "tree.stage.done": "完全长成",
     "tree.stage.partial": "{{stageName}}（总共{{max}}个阶段中的第{{step}}阶段）",
     "tree.next-growth.winter": "除非施肥，冬天在温室之外无法生长",
     "tree.next-growth.adjacent-trees": "因其他树靠的太近无法生长",
-    "tree.next-growth.chance": "有{{chance}}%几率明天成长到{{stage}}",
-    "tree.seed.not-ready": "Not ready", // TODO
-    "tree.seed.probability-daily": "{{chance}}% chance of {{itemName}} each day.", // TODO
-    "tree.seed.probability-on-chop": "{{chance}}% chance of dropping {{itemName}} when chopped down.", // TODO
+    "tree.next-growth.chance": "明天有{{chance}}%几率成长到{{stage}}",
+    "tree.seed.not-ready": "尚未就绪",
+    "tree.seed.probability-daily": "每天有{{chance}}%几率产生{{itemName}}。",
+    "tree.seed.probability-on-chop": "砍倒时有{{chance}}%几率掉落{{itemName}}。",
 
     // growth stages
     "tree.stages.seed": "种子",
@@ -641,10 +688,20 @@
     *********/
     // main options
     "config.title.main-options": "常规",
-    "config.progression-mode.name": "进度模式",
-    "config.progression-mode.desc": "是否隐藏某些内容(如礼物品位和谜题解决方法)，直到你在游戏中发现它",
     "config.force-full-screen.name": "强制全屏",
     "config.force-full-screen.desc": "是否全屏显示查询结果窗口，这对查看数据挖掘字段时非常有用",
+
+    // progression mode
+    "config.title.progression": "进度模式",
+
+    "config.progression.show-unknown-gift-tastes.name": "显示未知的礼物品味",
+    "config.progression.show-unknown-gift-tastes.desc": "是否显示游戏中不知道的礼物品味（例如，从对话或实际送礼中）。",
+
+    "config.progression.show-unknown-recipes.name": "显示未知的配方",
+    "config.progression.show-unknown-recipes.desc": "是否显示游戏中尚未学习的配方。",
+
+    "config.progression.show-puzzle-solutions.name": "显示谜题的解决方法",
+    "config.progression.show-puzzle-solutions.desc": "是否显示谜题的解决方法。",
 
     // gift tastes
     "config.title.gift-tastes": "礼物品位",
@@ -665,12 +722,25 @@
     "config.highlight-unrevealed-gift-tastes.name": "加粗显示未揭露的礼物",
     "config.highlight-unrevealed-gift-tastes.desc": "是否加粗显示未揭露的礼物品位",
 
+    // collapse fields
+    "config.title.collapse-fields": "折叠大型字段",
+
+    "config.collapse-fields.enabled.name": "启用",
+    "config.collapse-fields.enabled.desc": "是否折叠大型字段。当启用时，查找菜单会用'显示X个结果'的链接来替代大型字段，点击该字段会显示全部信息。",
+
+    "config.collapse-fields.building-recipes.name": "建筑查看: 生产规则",
+    "config.collapse-fields.item-recipes.name": "物品查看: 配方",
+    "config.collapse-fields.npc-gift-tastes.name": "NPC查看: 礼物品味",
+    "config.collapse-fields.any.desc": "如果某个字段包含的信息数量超过你所设置的值，查找菜单会用'显示X个结果'的链接来替代该字段。",
+
     // advanced options
     "config.title.advanced-options": "高级",
     "config.tile-lookups.name": "图块查询",
     "config.tile-lookups.desc": "是否将地图图块变为可查询对象",
     "config.data-mining-fields.name": "显示数据挖掘字段",
     "config.data-mining-fields.desc": "是否显示对数据挖掘者有用的原始数据(作为查询结果底部的单独字段)。这是一个高级功能，不适合大多数玩家。",
+    "config.show-invalid-recipes.name": "显示无效配方",
+    "config.show-invalid-recipes.desc": "是否显示含有错误物品的配方。",
     "config.target-redirection.name": "目标重定向",
     "config.target-redirection.desc": "游戏在某些情况下会生成一个暂时的替身来指代某个目标。比如，矿井中的阿比盖尔实际上只是一个暂时的npc，导致查询时并不会显示阿比盖尔的信息。开启该选项后，才能显示阿比盖尔的真正信息。",
     "config.scroll-amount.name": "滚动值",

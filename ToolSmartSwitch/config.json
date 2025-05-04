@@ -1,0 +1,20 @@
+{
+  "EnableMod": true,
+  "ToggleButton": "OemTilde",
+  "HoldingTool": true,
+  "FromWeapon": true,
+  "SwitchForObjects": true,
+  "SwitchForTrees": true,
+  "SwitchForResourceClumps": true,
+  "SwitchForGrass": true,
+  "SwitchForCrops": true,
+  "HarvestWithScythe": true,
+  "SwitchForPan": true,
+  "SwitchForWateringCan": false,
+  "SwitchForFishing": false,
+  "SwitchForWatering": false,
+  "SwitchForTilling": false,
+  "SwitchForAnimals": true,
+  "SwitchForMonsters": true,
+  "MonsterMaxDistance": 256.0
+}

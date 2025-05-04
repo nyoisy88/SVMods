@@ -1,0 +1,20 @@
+{
+  "config.modEnabled": "Activer le mod",
+  "config.toggleButton": "Bouton d'activation",
+  "config.onlyWhenHolding": "Seulement avec un Outil en main",
+  "config.switchFromWeapon": "Changement depuis une Arme",
+  "config.switchForAnimals": "Changement pour les Animeaux",
+  "config.switchForMonsters": "Changement pour les Monstres",
+  "config.maxMonsterDistance": "Distance max pour les Monstres",
+  "config.switchForTrees": "Changement pour les Arbres",
+  "config.switchForGrass": "Changement pour l'Herbe",
+  "config.switchForCrops": "Changement pour les Plantations",
+  "config.harvestWithScythe": "Récolter avec la Faux (Mod)",
+  "config.switchForResourceClumps": "Changement pour les Gemmes",
+  "config.switchForPan": "Changement pour les Tamis",
+  "config.switchForWateringCan": "Changement pour l'Arrosoir",
+  "config.switchForTilling": "Changement pour Bêcher",
+  "config.switchForWatering": "Changement pour Arroser",
+  "config.switchForFishing": "Changement pour Pêcher",
+  "config.switchForObjects": "Changement pour les Objets"
+}
