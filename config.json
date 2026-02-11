@@ -1,5 +1,5 @@
 {
-    "apiKey":  "",
+    "apiKey":  "enter your api key here",
     "gameDomainName":  "stardewvalley",
     "modTableFile": "versions.csv"
 }

@@ -10,9 +10,10 @@ $config = Get-Content -Path $configPath | ConvertFrom-Json
 $gameDomainName = $config.gameDomainName
 $apiKey = $config.apiKey
 $modTablePath = "$modsDir\$($config.modTableFile)"
+$gameDomainName = $gameDomainName.Trim()
 
 # headers with api key for all nexus API calls
-$headers = @{"apikey" = $config.apiKey }
+$headers = @{"apikey" = $apiKey }
 
 function Write-Log {
     param(
@@ -27,23 +28,6 @@ function Write-Log {
     Write-Host "[$timestamp] [$levelPadded] $modTag $Message"
 }
 
-# Load cookies from the JSON file
-$cookiesJson = Get-Content -Path "$modsDir\cookies.json" | ConvertFrom-Json
-# Create a new session
-$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-# Add cookies to the session
-foreach ($cookieData in $cookiesJson.cookies) {
-    $cookie = New-Object System.Net.Cookie
-    $cookie.Domain = $cookieData.domain
-    $cookie.HttpOnly = $cookieData.httpOnly
-    $cookie.Name = $cookieData.name
-    $cookie.Path = $cookieData.path
-    $cookie.Secure = $cookieData.secure
-    $cookie.Value = $cookieData.value
-    
-    $session.Cookies.Add($cookie)
-}
-
 # Function to get key and expire time from the download URL
 function Get-KeyAndExpireTime {
     param (
@@ -55,7 +39,7 @@ function Get-KeyAndExpireTime {
 
     try {
         $tokenStart = [System.Diagnostics.Stopwatch]::StartNew()
-        $rawOutput = .\nxm_key_getter.exe $gameDomainName $modId $fileId
+        $rawOutput = node .\nxm_key_getter.js $gameDomainName $modId $fileId
         $tokenStart.Stop()
     }
     catch {
@@ -89,6 +73,12 @@ function Get-KeyAndExpireTime {
     
 }
 	
+if ([string]::IsNullOrWhiteSpace([string]$gameDomainName)) {
+    Write-Log -Level 'WARN' -Message 'config.json is missing required value gameDomainName.'
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+    throw
+}
 
 # Load CSV data
 $modList = Import-Csv -Path $modTablePath

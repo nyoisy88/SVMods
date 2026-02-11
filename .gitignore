@@ -1,4 +1,2 @@
-*.json
-!config.json
-/node_modules
-*.js
+cookies.json
+node_modules/
