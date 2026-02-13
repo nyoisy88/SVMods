@@ -23,11 +23,26 @@ function normalizeCookies(cookiesJson) {
             value: c.value,
             domain: c.domain,
             path: c.path || '/',
-            expires: typeof c.expires === 'number'
-                ? c.expires
-                : (typeof c.expirationDate === 'number' ? c.expirationDate : undefined),
+            expires: typeof c.expirationDate === 'number'
+                ? Math.floor(c.expirationDate)
+                : typeof c.expires === 'number'
+                    ? Math.floor(c.expires)
+                    : undefined,
             httpOnly: Boolean(c.httpOnly),
-            secure: Boolean(c.secure)
+            secure: Boolean(c.secure),
+            sameSite:
+                typeof c.sameSite === 'string'
+                    ? (
+                        c.sameSite.toLowerCase() === 'lax'
+                            ? 'Lax'
+                            : c.sameSite.toLowerCase() === 'strict'
+                                ? 'Strict'
+                                : ['none', 'no_restriction', 'no-restriction']
+                                    .includes(c.sameSite.toLowerCase())
+                                    ? 'None'
+                                    : undefined
+                    )
+                    : undefined
         }));
 }
 
@@ -55,25 +70,44 @@ async function getKeyAndExpire(gameDomain, modId, fileId) {
     const hasCookies = cookies.length > 0;
     const browser = await chromium.launch({
         headless: false,
-        args: [
-            '--window-position=-32000,-32000',
-            '--window-size=800,600'
-        ]
+        // args: [
+        //     '--window-position=-32000,-32000',
+        // ]
     });
     let context;
     try {
-        context = await browser.newContext();
+        context = await browser.newContext({
+            // Real users don’t have consistent viewports — this helps avoid fingerprint mismatches
+            viewport: {
+                width: 1280 + Math.floor(Math.random() * 100), // Randomize a bit
+                height: 720 + Math.floor(Math.random() * 100),
+            },
+            userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36", // Use a real user-agent, ideally from your proxy location
+            locale: "en", // Match browser locale to IP region
+            timezoneId: "Asia/Bangkok", // Timezone mismatches are a red flag in Cloudflare fingerprinting
+        });
+        // On future runs, restore session to avoid challenges/login
+        // const savedCookies = JSON.parse(fs.readFileSync("./savedcookies.json"));
+        // await context.addCookies(savedCookies);
 
-        if (hasCookies) {
-            await context.addCookies(cookies);
-        }
         if (!hasCookies) {
             throw new Error('Required logged-in cookies for mods updater.');
         }
+        await context.addCookies(cookies);
         const page = await context.newPage();
 
         const url = buildDownloadUrl(gameDomain, modId, fileId);
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+
+        // const usedcookies = await context.cookies();
+        // fs.writeFileSync("./usedcookies.json", JSON.stringify(usedcookies, null, 2));
+
+        // Check if Cloudflare is presenting a CAPTCHA challenge
+        const isCaptchaPresent = await page.$('iframe[src*="captcha"]');
+
+        if (isCaptchaPresent) {
+            throw new Error("CAPTCHA detected – will need to solve or switch proxy");
+        }
 
         try {
             await page.waitForSelector(
