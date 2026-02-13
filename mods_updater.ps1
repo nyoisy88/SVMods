@@ -1,5 +1,10 @@
 # Get the directory of the script
 $modsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$downloadDir = Join-Path $modsDir 'downloaded'
+
+if (-not (Test-Path -Path $downloadDir -PathType Container)) {
+    New-Item -Path $downloadDir -ItemType Directory | Out-Null
+}
 
 # Path to the configuration
 $configPath = "$modsDir\config.json"
@@ -8,12 +13,8 @@ $configPath = "$modsDir\config.json"
 # Load config.json
 $config = Get-Content -Path $configPath | ConvertFrom-Json
 $gameDomainName = $config.gameDomainName
-$apiKey = $config.apiKey
 $modTablePath = "$modsDir\$($config.modTableFile)"
 $gameDomainName = $gameDomainName.Trim()
-
-# headers with api key for all nexus API calls
-$headers = @{"apikey" = $apiKey }
 
 function Write-Log {
     param(
@@ -39,7 +40,7 @@ function Get-KeyAndExpireTime {
 
     try {
         $tokenStart = [System.Diagnostics.Stopwatch]::StartNew()
-        $rawOutput = node .\nxm_key_getter.js $gameDomainName $modId $fileId
+        $rawOutput = node .\getNxmKey.js $gameDomainName $modId $fileId
         $tokenStart.Stop()
     }
     catch {
@@ -80,13 +81,36 @@ if ([string]::IsNullOrWhiteSpace([string]$gameDomainName)) {
     throw
 }
 
+# Get user api key (must provided cookies)
+Write-Log -Level 'INFO' -Message 'Fetching API key from Nexus account page'
+
+$apiKeyOutput = node ./getApiKey.js
+
+if ($LASTEXITCODE -ne 0) {
+    $nodeError = ($apiKeyOutput | Out-String).Trim()
+    Write-Log -Level 'ERROR' -Message "Failed to fetch API key via getApiKey.js: $nodeError"
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+    throw 'Cannot continue without a valid Nexus API key.'
+}
+
+if ([string]::IsNullOrWhiteSpace($apiKeyOutput)) {
+    Write-Log -Level 'ERROR' -Message 'API key is empty. Check cookies and retry.'
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+    throw 'Cannot continue without a valid Nexus API key.'
+}
+Write-Host
+
+# headers with api key for all nexus API calls
+$headers = @{"apikey" = $apiKeyOutput }
+
+
 # Load CSV data
 $modList = Import-Csv -Path $modTablePath
 
 # Loop through each mod, check for updates, download, and extract if needed
 foreach ($mod in $modList) {
     $modId = $mod.modId
-	$modStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+    $modStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 	
     # Get the general infomation of the mod
     $generalInfoUrl = "https://api.nexusmods.com/v1/games/$gameDomainName/mods/$modId.json"    
@@ -97,7 +121,7 @@ foreach ($mod in $modList) {
     $mod.modName = $modName
 
     # Check is the mod is available
-    if (!$generalInfoResponse.available){
+    if (!$generalInfoResponse.available) {
         Write-Log -Level 'INFO' -Message "This mod is no longer available"  -ModId $modId
         $modStopwatch.Stop()
         $elapsedMs = [Math]::Round($modStopwatch.Elapsed.TotalMilliseconds, 0)
@@ -114,6 +138,9 @@ foreach ($mod in $modList) {
     $latestModInfo = $latestModResponse.files | Sort-Object -Property "uploaded_timestamp" -Descending | Select-Object -First 1
     $latestVersion = $latestModInfo.version
     $latestFileId = $latestModInfo.file_id
+    
+    # Save the updated versions file
+    $modList | Export-Csv -Path $modTablePath -NoTypeInformation
 
     # Check if the mod is up to date
     if ($mod.modVersion -eq $latestVersion) {
@@ -148,7 +175,7 @@ foreach ($mod in $modList) {
     Write-Log -Level 'DEBUG' -Message "Download endpoint resolved: $downloadUrl"  -ModId $modId
 
     # Download the mod
-    $zipFilePath = "$modsDir\$modName.zip"
+    $zipFilePath = Join-Path $downloadDir "$modName.zip"
     try {
         Invoke-WebRequest -Uri $downloadLink -OutFile $zipFilePath
         Write-Log -Level 'INFO' -Message 'Download completed' -ModId $modId
@@ -164,7 +191,7 @@ foreach ($mod in $modList) {
 
     # Extract then remove zip File
     try {
-        Expand-Archive -Path $zipFilePath -DestinationPath $modsDir -Force
+        Expand-Archive -Path $zipFilePath -DestinationPath $downloadDir -Force
         Remove-Item $zipFilePath
         Write-Log -Level 'INFO' -Message "Extracted successfully"  -ModId $modId
     }
@@ -177,17 +204,17 @@ foreach ($mod in $modList) {
         continue
     }
 
-    # update mod version
+    # update mod version after success download s
     $mod.modVersion = $latestVersion
+    
+    # Save the updated versions file
+    $modList | Export-Csv -Path $modTablePath -NoTypeInformation
 
     $modStopwatch.Stop()
     $elapsedSeconds = [Math]::Round($modStopwatch.Elapsed.TotalSeconds, 1)
     Write-Log -Level 'INFO' -Message "Done ($elapsedSeconds s)"  -ModId $modId
     Write-Host
 }
-
-# Save the updated versions file
-$modList | Export-Csv -Path $modTablePath -NoTypeInformation
 
 Write-Host -NoNewLine 'Press any key to continue...';
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
