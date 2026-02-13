@@ -1,6 +1,7 @@
 # Mods Updater for Nexusmod
 
 > *Only for educational purposes*
+
 Tired of updating dozens of mods manually? Just one-time setup and everything will be updated with one click!
 
 (Well, cookies could be expired so remember to refresh once in a while)
